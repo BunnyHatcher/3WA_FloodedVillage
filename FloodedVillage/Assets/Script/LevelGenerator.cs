@@ -19,6 +19,8 @@ public class LevelGenerator : MonoBehaviour
 
     private void Start()
     {
+       //------------------Create the data that will be filled in-----------------------
+        
         LevelGrid = new TileTypes[5, 5];
 
         //first index corresponds to rows, the second to columns
@@ -48,8 +50,16 @@ public class LevelGenerator : MonoBehaviour
             LevelGrid[4, i] = TileTypes.Water;
         }
 
-        GeneratePrefabs();
+        
+        
+        
+
+      for (int i = 0; i < 5; i++)
+      { GeneratePrefabs(); }
     }
+
+
+    //------------------Generating the prefabs-----------------------
 
     private void GeneratePrefabs()
     {
@@ -99,5 +109,79 @@ public class LevelGenerator : MonoBehaviour
         //we reinitialize g
         g = Instantiate(newInstance, transform);
         g.transform.localPosition = new Vector2(1, 0);
+
+        
+        //-----------3nd Tile------------------------
+
+        //we reinitialize the variable newInstance
+
+        if (LevelGrid[0, 2] == TileTypes.Sand)
+        {
+            newInstance = SandPrefab;
+        }
+
+        if (LevelGrid[0, 2] == TileTypes.Water)
+        {
+            newInstance = WaterPrefab;
+        }
+
+        if (LevelGrid[0, 2] == TileTypes.Empty)
+        {
+            newInstance = EmptyPrefab;
+        }
+
+        //we reinitialize g
+        g = Instantiate(newInstance, transform);
+        g.transform.localPosition = new Vector2(2, 0);
+
+        //-----------4th Tile------------------------
+
+        //we reinitialize the variable newInstance
+
+        if (LevelGrid[0, 2] == TileTypes.Sand)
+        {
+            newInstance = SandPrefab;
+        }
+
+        if (LevelGrid[0, 2] == TileTypes.Water)
+        {
+            newInstance = WaterPrefab;
+        }
+
+        if (LevelGrid[0, 2] == TileTypes.Empty)
+        {
+            newInstance = EmptyPrefab;
+        }
+
+        //we reinitialize g
+        g = Instantiate(newInstance, transform);
+        g.transform.localPosition = new Vector2(3, 0);
+
+        //-----------5th Tile------------------------
+
+        //we reinitialize the variable newInstance
+
+        if (LevelGrid[0, 2] == TileTypes.Sand)
+        {
+            newInstance = SandPrefab;
+        }
+
+        if (LevelGrid[0, 2] == TileTypes.Water)
+        {
+            newInstance = WaterPrefab;
+        }
+
+        if (LevelGrid[0, 2] == TileTypes.Empty)
+        {
+            newInstance = EmptyPrefab;
+        }
+
+        //we reinitialize g
+        g = Instantiate(newInstance, transform);
+        g.transform.localPosition = new Vector2(4, 0);
+
+
+
+
     }
 }
