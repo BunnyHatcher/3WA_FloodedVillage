@@ -376,6 +376,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1570393828}
   - component: {fileID: 1570393827}
+  - component: {fileID: 1570393829}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -390,7 +391,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1570393826}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4462db5bd6396094cba47bfb87d431e7, type: 3}
   m_Name: 
@@ -413,3 +414,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1570393829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570393826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03ab38a246902d549a0b4663942d1369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SandPrefab: {fileID: 1578843771709833952, guid: 00bf3870bb464d846a8d6dd25ac052eb, type: 3}
