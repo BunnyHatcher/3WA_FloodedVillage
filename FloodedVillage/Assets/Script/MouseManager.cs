@@ -6,13 +6,7 @@ public class MouseManager : MonoBehaviour
 {
     public Camera _camera;
 
-    enum TileTypes
-    {
-        Sand,
-        Water,
-        Empty,
-    }
-
+   
 
     private void Start()
     {
