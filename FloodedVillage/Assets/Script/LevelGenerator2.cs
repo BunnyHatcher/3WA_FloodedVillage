@@ -2,12 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum TileTypes
+{
+    Sand,
+    Water,
+    Empty,
+}
+
 public class LevelGenerator2 : MonoBehaviour
 {
-    int SizeX = 5;
-    int SizeY = 5;
+    public int SizeX = 5;
+    public int SizeY = 5;
+
+    public TileTypes[,] LevelGrid;
 
     public GameObject SandPrefab;
+    public GameObject WaterPrefab;
+    public GameObject EmptyPrefab;
+
     [SerializeField] private GameObject Level;
 
     
