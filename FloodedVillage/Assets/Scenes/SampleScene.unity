@@ -255,6 +255,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 519420031}
+  SandPrefab: {fileID: 1578843771709833952, guid: 00bf3870bb464d846a8d6dd25ac052eb, type: 3}
+  WaterPrefab: {fileID: 8910821035496023389, guid: 9844bc61ca1d640478d980d3484a24fa, type: 3}
+  EmptyPrefab: {fileID: 3583657816986715264, guid: a2c7c828bd0216e4198261b700daca47, type: 3}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,5 +429,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03ab38a246902d549a0b4663942d1369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SizeX: 5
+  SizeY: 5
   SandPrefab: {fileID: 1578843771709833952, guid: 00bf3870bb464d846a8d6dd25ac052eb, type: 3}
+  WaterPrefab: {fileID: 0}
+  EmptyPrefab: {fileID: 0}
   Level: {fileID: 1570393826}
