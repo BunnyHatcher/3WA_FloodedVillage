@@ -30,6 +30,12 @@ public class MouseManager : MonoBehaviour
             if (hit.collider.CompareTag("Sand"))
             {
                 Debug.Log("Touchdown!");
+
+               /* if (Input.GetMouseButtonDown(0))
+                {
+                   Deactivate 
+                }
+               */
             }
 
         }

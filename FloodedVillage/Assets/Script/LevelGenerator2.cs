@@ -8,6 +8,7 @@ public class LevelGenerator2 : MonoBehaviour
     int SizeY = 5;
 
     public GameObject SandPrefab;
+    [SerializeField] private GameObject Level;
 
     
 
@@ -16,11 +17,14 @@ public class LevelGenerator2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i<SizeX; i++)
+        for (int x = 0; x < SizeX; x++)
         {
-            for (int j = 0; j<SizeY; j++)
+            for (int y = 0; y < SizeY; y++)
             {
-                Instantiate(SandPrefab, new Vector3(i, j, 0), Quaternion.identity);
+                var spawnedTile = Instantiate(SandPrefab, new Vector3(x, y, 0), Quaternion.identity);
+                spawnedTile.name = $"Tile {x} {y}";
+
+                
             }
         }
     }
