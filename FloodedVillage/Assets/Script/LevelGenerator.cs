@@ -3,14 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
+
 public enum TileTypes
 {
     Sand,
     Water,
     Empty,
 }
-*/
+
 
 public class LevelGenerator : MonoBehaviour
 {
