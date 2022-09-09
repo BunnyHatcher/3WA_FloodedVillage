@@ -23,7 +23,7 @@ public class LevelGenerator2 : MonoBehaviour
     public GameObject WaterPrefab;
     public GameObject EmptyPrefab;
 
-    [SerializeField] private GameObject Level;
+    [SerializeField] private GameObject GridParent;
 
 
 
@@ -46,8 +46,8 @@ public class LevelGenerator2 : MonoBehaviour
         };
 
         GenerateGrid();
-
         Propagation();
+
         Debug.Log(myGrid[0, 6]);
 
         
@@ -61,10 +61,38 @@ public class LevelGenerator2 : MonoBehaviour
             {
                 for (int y = 0; y < height; y++)
                 {
+                /*
+                --------------Old simplified code for creating a very simple grid--------------------
+
                 var spawnedTile = Instantiate(SandPrefab, new Vector3(x, y, 0), Quaternion.identity);
                 spawnedTile.name = $"Tile {x} {y}";
-                
+                */
+
+
+                //--------------New code for creating a grid following the pattern of myGrid--------------------
+
+                if (myGrid[x, y] == (byte)TileType.Sand)
+                {
+                    // if under [0,0] there is Sand:  
+                    var spawnedTile = Instantiate(SandPrefab, new Vector3(x, y), Quaternion.identity, this.transform);
                 }
+
+                /*if (myGrid[x, y] == (byte)TileType.Water)
+                {
+                    // if under [0,0] there is Water:  
+                    var spawnedTile = Instantiate(WaterPrefab, new Vector3(x, y), Quaternion.identity, this.transform);
+                }
+                */
+                
+                /*
+                if (myGrid[x, y] == (byte)TileType.Empty)
+                {
+                    // if under [0,0] there is Sand:  
+                    var spawnedTile = Instantiate(EmptyPrefab, new Vector3(x, y), Quaternion.identity, this.transform);
+                }
+                */
+
+            }
             }
         
         }
@@ -78,7 +106,7 @@ public class LevelGenerator2 : MonoBehaviour
 
             {
                 if (
-                    myGrid[x, y] == 0
+                    (myGrid[x, y] == 0)
                     && (myGrid[x + 1, y] == 1 //put or conditions into brackets
                     || myGrid[x - 1, y] == 1
                     || myGrid[x, y + 1] == 1
@@ -90,7 +118,6 @@ public class LevelGenerator2 : MonoBehaviour
                     /*Destroy(myGrid[x, y]);
                     Instantiate(WaterPrefab, myGrid[x, y].transform.position, Quaternion.identity);
                     */
-
                     Propagation();
                 }
 
